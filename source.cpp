@@ -151,17 +151,42 @@ void displayArray(const int arr[], const int size) {
 
 // Sums the odd numbers in the array and returns the result
 int sumOddArray(const int arr[], const int size) {
-	//@TODO: You will need to complete this. Including makeing the appropriate comment header
-	return 0;
+	int sum = 0;
+
+	for (int i = 0; i < size; ++i) {
+		if (arr[i] % 2 != 0) {
+			sum += arr[i];
+		}
+	}
+
+	return sum;
 }
 
 // If all the values in the array are positive return true
 bool isAllPositive(const int arr[], const int size) {
-	//@TODO: You will need to complete this. Including makeing the appropriate comment header
+	for (int i = 0; i < size; ++i) {
+		if (arr[i] <= 0) {
+			return false;
+		}
+	}
+	return true;
 	return 0;
 }
 
 // Finds the average of all the odd numbers in the array and stores this in the last argument
 void avgOddArray(const int arr[], const int size, int& avgOdd) {
-	//@TODO: You will need to complete this. Including makeing the appropriate comment header
+	int sum = 0, count = 0;
+
+	for (int i = 0; i < size; ++i) {
+		if (arr[i] % 2 != 0) {
+			sum += arr[i];
+			count++;
+		}
+	}
+
+	if (count != 0) {
+		avgOdd = static_cast<double>(sum) / count;
+	} else {
+		avgOdd = 0.0;
+	}
 }
